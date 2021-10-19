@@ -5,7 +5,7 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: './src/index.js',
-  mode: 'development',
+  mode: 'production',
   devtool: 'inline-source-map',
   devServer: {
     static: './dist',
@@ -13,6 +13,7 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: 'https://jameswotherspoon.github.io/Portfolio-alt/'
     //clean: true,
   },
   module: {
