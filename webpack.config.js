@@ -13,7 +13,7 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: 'https://jameswotherspoon.github.io/Portfolio-alt/'
+    publicPath: '/'
     //clean: true,
   },
   module: {

@@ -113,20 +113,20 @@ body {
 }
 .scss_icon {
     &.trigger-fall {
-        animation: bottomLayerDrop 0.75s ease-in 0.2s 1 forwards;
+        animation: bottomLayerDrop 0.8s ease-in 0.2s 1 forwards;
     }
     left: 100px;
 }
 .html_icon {
     &.trigger-fall {
-        animation: htmlSecondLayerDrop 0.75s ease-in 0.5s 1 forwards;
+        animation: htmlSecondLayerDrop 0.8s ease-in 0.5s 1 forwards;
     }
     left: 161px;
     transform: rotate(-20deg);
 }
 .git_icon {
     &.trigger-fall {
-        animation: gitSecondLayerDrop 0.75s ease-in 0.4s 1 forwards;
+        animation: gitSecondLayerDrop 0.8s ease-in 0.4s 1 forwards;
     }
     left: 330px;
     transform: rotate(45deg);
@@ -162,7 +162,7 @@ body {
 .bootstrap_icon {
     left: 330px;
     &.trigger-fall {
-        animation: bootstrapThirdLayerDrop 0.6s ease-in 0.7s 1 forwards;
+        animation: bootstrapThirdLayerDrop 0.8s ease-in 0.7s 1 forwards;
     }
 }
 
@@ -177,7 +177,7 @@ body {
 }
 @keyframes secondLayerDrop {
     0% {
-        top: -200px;
+        top: -300px;
     }
 
     100% {
@@ -186,7 +186,7 @@ body {
 }
 @keyframes gitSecondLayerDrop {
     0% {
-        top: -200px;
+        top: -300px;
     }
 
     100% {
@@ -195,7 +195,7 @@ body {
 }
 @keyframes htmlSecondLayerDrop {
     0% {
-        top: -200px;
+        top: -300px;
     }
 
     100% {
@@ -204,7 +204,7 @@ body {
 }
 @keyframes thirdLayerDrop {
     0% {
-        top: -200px;
+        top: -400px;
     }
 
     100% {
@@ -214,7 +214,7 @@ body {
 
 @keyframes bootstrapThirdLayerDrop {
     0% {
-        top: -200px;
+        top: -400px;
     }
 
     100% {
@@ -285,6 +285,43 @@ body {
 
 .footer-midline-dot {
     font-size: 5px;
+}
+
+// about.html
+
+.about-deco-squares-svg {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    transform: rotate(270deg);
+}
+
+.about-deco-square {
+    width: 70%;
+    height: calc(100% -  200px);
+    position: absolute;
+    bottom: 0;
+    right: 100px;
+    z-index: -1;
+    border: 8px solid rgb(4, 161, 204);
+}
+.about-deco-offset-outline {
+    width: 300px;
+    height: 284px;
+    border-radius: 400px;
+    border: 4px solid #4f4f4f;
+    position: absolute;
+    bottom: 8px;
+    right: 108px;
+    z-index: 0;
+}
+.profile-image{
+    width: 70%;
+    height: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    position: relative;
+    z-index: 99;
 }
 
 //  cv.html 

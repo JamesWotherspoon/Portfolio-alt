@@ -6,13 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "start": "webpack serve --open"
+    "start": "webpack serve --open",
+    "deploy": "gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "bootstrap": "^5.1.3",
+    "gh-pages": "^3.2.3",
     "mdb-ui-kit": "^3.9.0"
   },
   "devDependencies": {
