@@ -4,17 +4,29 @@ const webpack = require('webpack');
 
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    index: './src/index.js',
+    animations: './src/animations.js',
+    formSubmitApi: './src/formSubmitApi.js'
+  },
   mode: 'production',
   devtool: 'inline-source-map',
   devServer: {
     static: './dist',
   },
   output: {
-    filename: 'main.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
-    //clean: true,
+    publicPath: '/',
+    clean: true,
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
+  performance: {
+    hints: false,
   },
   module: {
     rules: [

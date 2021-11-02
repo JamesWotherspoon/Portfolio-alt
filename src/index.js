@@ -1,120 +1,73 @@
-import * as mdb from 'mdb-ui-kit';
+import 'detect-autofill';
+import { Input } from 'mdb-ui-kit/src/js/free/input';
 import './styles.scss';
-const $ = require( "jquery" );
 
-// navbar
-//home 
-$('#nav-home-link').on('click', function open(){
-        window.open('./index.html', '_self')
-    }
-);
-// About
-$('#nav-about-link').on('click', function open(){
-        window.open('./about.html', '_self')
-    }
-);
-// Resume
-$('#nav-cv-link').on('click', function open(){
-        window.open('./cv.html', '_self')
-    }
-);
-// Github 
-$('#nav-github-link').on('click', function(){
-    window.open('https://github.com/JamesWotherspoon?tab=repositories');
-})
-// Contact nav
-$('#nav-contact-link').on('click', function(){
-    console.log(window.location.href);
-    if ($('body').is('.about')){
-        window.open('./index.html?contact=true', '_self');
-    };
-    let $linkDestination =  $($(this).data('link')).offset().top;
-    $(window).scrollTop($linkDestination);
-})
+$(function(){
 
-
-
-
-// stack triggered to fall
-if ($('body').is('.index')){
-
-    if(new URLSearchParams(window.location.search).get('contact') ){
-        let $linkDestination =  $('.contact-content').offset().top;
-        $(window).scrollTop($linkDestination);
-        window.history.replaceState({}, document.title, "/" + "index.html");
-    };
-
-    $(window).on('scroll', triggerStackFall);
-
-    function triggerStackFall(){
-        let $viewportMiddle = $(window).scrollTop() + ($(window).height() * 0.9);
-        if($('.stack-section').offset().top + $('.stack-section').height() < $viewportMiddle){
-            $('.stack-icon').addClass('trigger-fall');
-            console.log('stack fall fired ')
-            $(window).off('scroll', triggerStackFall);
+    // navbar
+    //home 
+    $('#nav-home-link').on('click', function open(){
+            window.open('./index.html', '_self')
         }
-    }
-
-    // projects 
-    $('.project-one-image-container').on('click', projectOneOpen);
-
-    function projectOneOpen(){
-        window.open('https://jameswotherspoon.github.io/dashboard/');
-    }
-
-    $('.project-two-image-container').on('click', projectTwoOpen)
-
-    function projectTwoOpen(){
-        window.open('https://jameswotherspoon.github.io/airbnb_clone/');
-    }
-
-    // contact 
-
-    // formsubmit api 
-    $('.contact-form').on('submit', (event) => {
-        event.preventDefault();    
-        let emailValue = $('#email').val();
-        let nameValue = $('#name').val();
-        let textareaValue = $('#contact-textarea').val();
-
-        $.ajax({
-            url: "https://formsubmit.co/ajax/baf6f2f077f9f8497948a7d66fd2092e",
-            method: "POST",
-            dataType: "json",
-            data: {
-                email: emailValue,
-                name: nameValue,
-                textarea: textareaValue
-            },
-            success: () => {
-                console.log('success')
-                /*
-                $('.contact-form')[0].reset();
-                $('.contact-form-overlay').css('display', 'flex').text('Your message has been sent');
-                setTimeout(()=> {
-                    $('.contact-form-overlay').css('display', 'none');
-                }, 3000); */
-            },
-            error: (err) => {
-                console.log('error')
-                /*
-                $('.contact-form')[0].reset();
-                $('.contact-form-overlay').empty().css('display', 'flex').html('Your message was not successfull <br><br> Please contact me directly at <br><br> james.t.wotherspoon@gmail.com');
-                setTimeout(()=> {
-                    $('.contact-form-overlay').css('display', 'none');
-                }, 12000); */
-            }
-        })
+    );
+    // About
+    $('#nav-about-link').on('click', function open(){
+            window.open('./about.html', '_self')
+        }
+    );
+    // Resume
+    $('#nav-cv-link').on('click', function open(){
+            window.open('./cv.html', '_self')
+        }
+    );
+    // Github 
+    $('#nav-github-link').on('click', function(){
+        window.open('https://github.com/JamesWotherspoon?tab=repositories');
     })
-}
-// open default email account
-$('#email-address-container').on('click', function(){
-    window.location.href = "mailto:james.t.wotherspoon@gmail.com?subject=Hi!";
-})
+    // Contact nav
+    $('#nav-contact-link').on('click', function(){
+        console.log(window.location.href);
+        if ($('body').is('.about')){
+            window.open('./index.html?contact=true', '_self');
+        };
+        let $linkDestination =  $($(this).data('link')).offset().top;
+        $(window).scrollTop($linkDestination);
+    })
 
-// footer 
-$('#btn-scroll-top').on('click', function(){
-    $(window).scrollTop(0);
-})
 
 
+
+    // stack triggered to fall
+    if ($('body').is('.index')){
+
+        if(new URLSearchParams(window.location.search).get('contact') ){
+            let $linkDestination =  $('.contact-content').offset().top;
+            $(window).scrollTop($linkDestination);
+            window.history.replaceState({}, document.title, "/" + "index.html");
+        };
+
+        // projects 
+        $('.project-one-image-container').on('click', projectOneOpen);
+
+        function projectOneOpen(){
+            window.open('https://jameswotherspoon.github.io/dashboard/');
+        }
+
+        $('.project-two-image-container').on('click', projectTwoOpen)
+
+        function projectTwoOpen(){
+            window.open('https://jameswotherspoon.github.io/airbnb_clone/');
+        }
+
+    }
+    // open default email account
+    $('#email-address-container').on('click', function(){
+        window.location.href = "mailto:james.t.wotherspoon@gmail.com?subject=Hi!";
+    })
+
+    // footer 
+    $('#btn-scroll-top').on('click', function(){
+        $(window).scrollTop(0);
+    })
+
+});

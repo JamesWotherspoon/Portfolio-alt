@@ -47,9 +47,26 @@ body {
         }
     }
 }
-
+// showcase 
+.greeting-fade-ready {
+    opacity: 0;
+    &.fade-in {
+        opacity: 1;
+        transition: opacity 0.5s;
+    }
+}
 
 // features 
+.feature-fade-ready {
+    opacity: 0;
+    top: 100px;
+    &.fade-in {
+        top: 0px;
+        opacity: 1;
+        transition: opacity 0.3s, top 0.3s;
+    }
+}
+
 .features-section {
     background: linear-gradient(0deg, transparent 40%, #262626 40%);
     z-index: 50;
@@ -222,7 +239,7 @@ body {
     }
 }
 
-// project 
+// project
 
 .projects-section {
     padding-top: 120px;
@@ -260,6 +277,13 @@ body {
 
 
 // Contact 
+
+.contact-form-overlay {
+    display: none;
+    z-index: 99;
+    top: -10px;
+    height: 110%;
+}
 
 .contact-section {
     position: relative;
